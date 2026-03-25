@@ -133,6 +133,7 @@ const answerList = document.getElementById("answer-list");
 const progressFill = document.getElementById("progress-fill");
 
 const resultTitle = document.getElementById("result-title");
+const resultImage = document.getElementById("result-image");
 const resultDescription = document.getElementById("result-description");
 const resultSuperpower = document.getElementById("result-superpower");
 const resultUses = document.getElementById("result-uses");
@@ -199,6 +200,15 @@ function getWinningPersona() {
 }
 
 function showResult() {
+  const imageMap = {
+  A: "images/prompt-whisperer.png",
+  B: "images/content-alchemist.png",
+  C: "images/classroom-conductor.png",
+  D: "images/feedback-detective.png",
+  E: "images/lesson-hacker.png"
+};
+
+resultImage.src = imageMap[winner];
   quizScreen.classList.add("hidden");
   resultScreen.classList.remove("hidden");
 
