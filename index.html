@@ -4,29 +4,77 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Which AI Teacher Are You?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div id="start-screen">
-      <h1>Which AI Teacher Are You?</h1>
-      <button id="start-btn">Start Quiz</button>
-    </div>
+  <div class="page-shell">
+    <main class="container">
+      <section class="hero card" id="start-screen">
+        <p class="eyebrow">AI Teacher Persona Quiz</p>
+        <h1>Which AI Teacher Are You?</h1>
+        <p class="lead">
+          Answer 6 quick questions to discover your dominant AI teacher persona.
+        </p>
+        <div class="persona-tags">
+          <span>Prompt Whisperer</span>
+          <span>Content Alchemist</span>
+          <span>Classroom Conductor</span>
+          <span>Feedback Detective</span>
+          <span>Lesson Hacker</span>
+        </div>
+        <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+      </section>
 
-    <div id="quiz-screen" class="hidden">
-      <h2 id="question-text"></h2>
-      <div id="answer-list"></div>
-      <button id="next-btn" disabled>Next</button>
-    </div>
+      <section class="card hidden" id="quiz-screen">
+        <div class="quiz-header">
+          <div>
+            <p class="eyebrow">Question <span id="question-number">1</span> of 6</p>
+            <h2 id="question-text"></h2>
+          </div>
+          <div class="progress-wrap" aria-hidden="true">
+            <div class="progress-bar">
+              <div class="progress-fill" id="progress-fill"></div>
+            </div>
+          </div>
+        </div>
 
-    <div id="result-screen" class="hidden">
-      <img id="result-image" src="" style="width:250px; display:block; margin:0 auto 20px;">
-      <h2 id="result-title"></h2>
-      <p id="result-description"></p>
-      <button id="restart-btn">Restart</button>
-    </div>
+        <div id="answer-list" class="answer-list"></div>
+
+        <div class="actions">
+          <button id="next-btn" class="btn btn-primary" disabled>Next</button>
+        </div>
+      </section>
+
+      <section class="card hidden" id="result-screen">
+        <p class="eyebrow">Your result</p>
+        <h2 id="result-title"></h2>
+        <p id="result-description" class="result-description"></p>
+
+        <div class="result-grid">
+          <div class="result-box">
+            <h3>Your superpower</h3>
+            <p id="result-superpower"></p>
+          </div>
+          <div class="result-box">
+            <h3>You typically use AI for...</h3>
+            <ul id="result-uses"></ul>
+          </div>
+        </div>
+
+        <div class="note-box">
+          Most teachers are a blend of several personas. This quiz simply highlights the way AI may currently support your practice most strongly.
+        </div>
+
+        <div class="actions result-actions">
+          <button id="restart-btn" class="btn btn-secondary">Retake Quiz</button>
+        </div>
+      </section>
+    </main>
   </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
